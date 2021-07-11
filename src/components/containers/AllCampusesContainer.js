@@ -6,15 +6,16 @@ import { AllCampusesView } from "../views";
 
 class AllCampusesContainer extends Component {
   componentDidMount() {
-    console.log(this.props);
     this.props.fetchAllCampuses();
+    console.log(this.props)
   }
 
   render() {
     return (
       <div>
-        Testing
-        <AllCampusesView allCampuses={this.props.allCampuses}/>
+        <AllCampusesView 
+        allCampuses={this.props.allCampuses}
+        />
       </div>
     );
   }

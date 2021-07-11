@@ -29,6 +29,36 @@ export const fetchCampusThunk = (id) => async (dispatch) => {
     console.error(err);
   }
 };
+//Add Campus
+export const addCampusThunk = (campus) => async (dispatch) => {
+  try {
+    console.log(campus);
+    let res = await axios.post(`/api/campuses`, campus);
+    dispatch(ac.addCampus(res.data));
+  } catch (err) {
+    console.error(err);
+  }
+};
+//Edit Campus
+export const editCampusThunk = (campus) => async (dispatch) => {
+  try {
+    let updatedCampus = await axios.put(`/api/campuses/${campus.id}`, campus);
+    dispatch(ac.editCampus(updatedCampus));
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+
+//Delete Campus
+export const deleteCampusThunk = (campusId) => async (dispatch) => {
+  try{
+    await axios.delete(`/api/campuses/${campusId}`)
+    dispatch(ac.deleteCampus(campusId));
+  }catch (err){
+    console.log(err);
+  }
+};
 
 //All students
 export const fetchAllStudentsThunk = () => async (dispatch) => {
