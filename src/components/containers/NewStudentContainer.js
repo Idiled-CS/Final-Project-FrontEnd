@@ -11,7 +11,8 @@ class NewStudentContainer extends Component {
         super(props);
         this.state = {
           firstname: "", 
-          lastname: "", 
+          lastname: "",
+          gpa:"",
           campusId: null, 
           redirect: false, 
           redirectId: null
@@ -30,7 +31,8 @@ class NewStudentContainer extends Component {
         let student = {
             firstname: this.state.firstname,
             lastname: this.state.lastname,
-            campusId: this.state.campusId
+            campusId: this.state.campusId,
+            gpa: this.state.gpa
         };
         
         let newStudent = await this.props.addStudent(student);
