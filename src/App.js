@@ -1,4 +1,5 @@
 import "./App.css";
+import "./allViewer.css";
 //Andrew
 //Router
 import { Switch, Route } from "react-router-dom";

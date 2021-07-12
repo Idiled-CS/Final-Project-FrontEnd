@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
+
 const deleteCampus = async (campus) =>{
   await axios
     .delete(`/api/campuses/${campus}`)
@@ -21,17 +22,14 @@ const AllCampusesView = (props) => {
   return (
     <div>
       {props.allCampuses.map((campus) => (
-        <div key={campus.id}>
+        <div style = {{
+          border: "5px solid black"
+        }}
+         key={campus.id}>
           <Link to={`/campus/${campus.id}`}>
             <h1>{campus.name}</h1>
           </Link>
-          <img src = {campus.imageUrl}
-          style = {{
-            display:"block",
-            margin: "10px",
-            height: "100px",
-            width: "200px",
-          }}>
+          <img src = {campus.imageUrl}>
           </img>
           <p>{campus.description}</p>
           <p>{campus.address}</p>
@@ -43,7 +41,11 @@ const AllCampusesView = (props) => {
       </Link>
 
       <h2>
-        <Link to={`/`}>
+        <Link style = {{
+          border: "5px dotted black",
+          backgroundColor: "#3791e6"
+        }}
+        to={`/`}>
           Home
         </Link>
       </h2>

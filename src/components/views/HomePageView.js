@@ -16,7 +16,7 @@ const useStyles = makeStyles(theme => ({
     fontType: 'bold',
     fontFamily: 'Courier, sans-serif', 
     fontSize: '35px', 
-    color: '#CDDC39'
+    color: '#52c464'
   },
   appBar:{
     backgroundColor: '#11153e',
@@ -25,8 +25,8 @@ const useStyles = makeStyles(theme => ({
   greeting:{
     display: 'flex',
     justifyContent: 'center',
-    backgroundColor: 'white',
-    width: "50%",
+    backgroundColor: 'green',
+    width: "30%",
     margin: "auto",
   },
   links:{
@@ -59,7 +59,7 @@ const HomePageView = () => {
         </Toolbar>
       </AppBar>
       
-      <div className={classes.greeting}><h1>Home Page</h1></div>
+      <div className={classes.greeting}><h1>Campuses and Their Students</h1></div>
     </div>
   );    
 }
