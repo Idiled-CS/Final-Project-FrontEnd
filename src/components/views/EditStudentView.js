@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import { Link } from 'react-router-dom'
 
 export default class EditStudentView extends Component {
     constructor(props){
@@ -62,7 +61,6 @@ export default class EditStudentView extends Component {
                     <input  name = "gpa" type = "float" placeholder = "GPA"></input>
                     <button type = "submit">Submit Changes</button>
                 </form>
-                <Link to = "/"> Home </Link>
             </div>
         )
     }

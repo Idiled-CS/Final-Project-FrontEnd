@@ -7,6 +7,18 @@ const CampusView = (props) => {
       <h1>{campus.name}</h1>
       <h2>{campus.address}</h2>
       <p>{campus.description}</p>
+      <h2>
+        <Link to = {{
+          pathname:`/editcampus/${campus.id}`
+        }}>
+          Edit Campus
+        </Link>
+      </h2>
+      <h2>
+        <Link to = {'/campuses'} key={campus.id + "backCampus"} >
+            Back To Campuses
+        </Link>
+      </h2>
       <ul>
       {campus.students.map( student => {
         let name = student.firstname + " " + student.lastname;
@@ -17,11 +29,7 @@ const CampusView = (props) => {
               {name}
             </Link>
             </h2>
-            <h2>
-              <Link to = {'/campuses'} key={student.id + "backCampus"} >
-                Back To Campuses
-              </Link>
-            </h2>
+
           </div>
         );
       })}

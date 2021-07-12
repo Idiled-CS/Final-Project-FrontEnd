@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import { Link } from 'react-router-dom'
 
 export default class EditCampusView extends Component {
     constructor(props){
@@ -22,20 +21,21 @@ export default class EditCampusView extends Component {
     async handlePut(event) {
         event.preventDefault();
         let data = {
-          firstname: event.target.firstname.value,
-          lastname: event.target.lastname.value,
-          gpa: event.target.gpa.value,
+          name: event.target.name.value,
+          address: event.target.address.value,
+          description: event.target.description.value,
+          imageUrl: event.target.url.value,
         };
         console.log(data)
         await axios
-          .put(`/api/campus/${this.state.campusEdit.Id}`, data)
+          .put(`/api/campuses/${this.state.campusEdit.Id}`, data)
           .then((response) => {
             console.log(response);
           })
           .catch((err) => {
             console.log(err);
           });
-        window.location.replace(`/campus/${this.state.campusEdit.Id}`);
+        // window.location.replace(`/campus/${this.state.campusEdit.Id}`);
     }
     render() {
         return (
@@ -43,10 +43,10 @@ export default class EditCampusView extends Component {
                 <form onSubmit = {this.handlePut}>
                     <input  name = "name" type = "text" placeholder = "name"></input>
                     <input  name = "address" type = "text" placeholder = "address"></input>
-                    <input  name = "url" type = "float" placeholder = "url"></input>
+                    <input  name = "description" type = "text" placeholder = "description"></input>
+                    <input  name = "url" type = "text" placeholder = "url"></input>
                     <button type = "submit">Submit Changes</button>
                 </form>
-                <Link to = "/"> Home </Link>
             </div>
         )
     }
