@@ -1,8 +1,12 @@
 import { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { fetchAllCampusesThunk } from "../../store/thunks";
-import { AllCampusesView } from "../views";
+import { 
+  fetchAllCampusesThunk,
+  deleteCampusThunk
+} from '../../store/thunks';
+
+import AllCampusesView from '../views/AllCampusesView';
 
 class AllCampusesContainer extends Component {
   componentDidMount() {
