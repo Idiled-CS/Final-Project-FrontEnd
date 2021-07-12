@@ -21,7 +21,7 @@ export const addCampus = (campuses) => {
   }
 }
 
-// Delete Campus
+//Delete Campus
 export const deleteCampus = (campus) => {
   return{
     type: at.DELETE_CAMPUS,
