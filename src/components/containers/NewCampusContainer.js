@@ -14,6 +14,7 @@ class NewCampusContainer extends Component {
           address:"",
           description:"",
           redirect: false, 
+          redirectId:null
         };
     }
 
@@ -33,17 +34,19 @@ class NewCampusContainer extends Component {
         };
         
         let newCampus = await this.props.addCampus(campus);
-
+        console.log(newCampus)
+        
         this.setState({
           name: "", 
           address: "", 
           description: "", 
           redirect: true, 
+          // redirectId: newCampus.id
         });
     }
 
     componentWillUnmount() {
-        this.setState({redirect: false});
+        this.setState({redirect: false, redirectId: null});
     }
 
     render() {
@@ -52,7 +55,7 @@ class NewCampusContainer extends Component {
         }
         return (
           <NewCampusView 
-            handleChange = {this.handleChange} 
+            handleChange={this.handleChange} 
             handleSubmit={this.handleSubmit}      
           />
         );
