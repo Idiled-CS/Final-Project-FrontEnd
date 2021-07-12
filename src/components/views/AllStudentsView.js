@@ -19,7 +19,9 @@ const AllStudentsView = (props) => {
       {students.map((student) => {
         let name = student.firstname + " " + student.lastname;
         return (
-          <div key={student.id}>
+          <div style = {{
+            border: "2px solid black"
+          }} key={student.id}>
           <Link to={`/student/${student.id}`}>
             <h1>{name}</h1>
           </Link>
