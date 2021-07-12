@@ -34,6 +34,7 @@ class NewStudentContainer extends Component {
         };
         
         let newStudent = await this.props.addStudent(student);
+        console.log(newStudent)
 
         this.setState({
           firstname: "", 
@@ -49,7 +50,7 @@ class NewStudentContainer extends Component {
     }
 
     render() {
-        if(this.state.redirect) {
+         if(this.state.redirect) {
           return (<Redirect to={`/student/${this.state.redirectId}`}/>)
         }
         return (
