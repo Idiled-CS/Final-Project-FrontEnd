@@ -14,7 +14,6 @@ class NewCampusContainer extends Component {
           address:"",
           description:"",
           redirect: false, 
-          redirectId: null
         };
     }
 
@@ -40,17 +39,16 @@ class NewCampusContainer extends Component {
           address: "", 
           description: "", 
           redirect: true, 
-          redirectId: newCampus.id
         });
     }
 
     componentWillUnmount() {
-        this.setState({redirect: false, redirectId: null});
+        this.setState({redirect: false});
     }
 
     render() {
         if(this.state.redirect) {
-          return (<Redirect to={`/campus/${this.state.redirectId}`}/>)
+          return (<Redirect to={`/campuses`}/>)
         }
         return (
           <NewCampusView 
